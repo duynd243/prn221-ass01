@@ -1,0 +1,15 @@
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\bin\Debug\net6.0\DataAccess.dll
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\bin\Debug\net6.0\BusinessObject.dll
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\bin\Debug\net6.0\BusinessObject.pdb
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CopyComplete
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\obj\Debug\net6.0\DataAccess.dll
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+D:\FPTU\TERM 8\PRN221\Assigments\Ass01Solution\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll

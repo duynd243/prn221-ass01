@@ -1,0 +1,120 @@
+﻿<Page x:Class="SalesWPFApp.Pages.OrdersPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="OrdersPage">
+
+    <Page.Resources>
+        <Style x:Key="DatePickerGroup">
+            <Setter Property="Control.Margin" Value="10, 20" />
+        </Style>
+    </Page.Resources>
+    <Grid Background="#f9fafb"
+          Margin="0, 10, 0, 10">
+        <StackPanel>
+            <StackPanel
+                Margin="15, 20"
+                HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Label
+                        FontWeight="Medium"
+                        HorizontalAlignment="Center"
+                        FontSize="24"
+                        Margin="0, 0, 10, 0">
+                        Show all orders
+                    </Label>
+                    <ToggleButton
+                        Background="#db2777"
+                        x:Name="ShowAllToggleButton"
+                        Click="ShowAllToggleButton_Changed"
+                        IsChecked="True"
+                        VerticalAlignment="Center"
+                        FontSize="20"
+                        Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                        ToolTip="Default ToggleButton Style" />
+                </StackPanel>
+                <WrapPanel
+                    HorizontalAlignment="Center">
+                    <StackPanel
+                        Style="{StaticResource DatePickerGroup}">
+                        <Label
+                            FontSize="16">
+                            From
+                        </Label>
+                        <DatePicker
+                            SelectedDateChanged="FromDatePicker_OnSelectedDateChanged"
+                            x:Name="FromDatePicker"
+                            IsEnabled="False"
+                            Width="200"
+                            Style="{StaticResource MaterialDesignOutlinedDatePicker}">
+                        </DatePicker>
+                    </StackPanel>
+                    <StackPanel
+                        Style="{StaticResource DatePickerGroup}">
+                        <Label
+                            FontSize="16">
+                            To
+                        </Label>
+                        <DatePicker
+                            SelectedDateChanged="ToDatePicker_OnSelectedDateChanged"
+                            x:Name="ToDatePicker"
+                            IsEnabled="False"
+                            Width="200"
+                            Style="{StaticResource MaterialDesignOutlinedDatePicker}">
+                        </DatePicker>
+                    </StackPanel>
+                </WrapPanel>
+                <Button
+                    x:Name="CreateOrderButton"
+                    Click="CreateOrderButton_OnClick"
+                    BorderThickness="0"
+                    FontWeight="DemiBold"
+                    Padding="0, 10"
+                    FontSize="16"
+                    Background="#09c372"
+                    Height="Auto">
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            Margin="0, 0, 10, 0"
+                            VerticalAlignment="Center"
+                            Text="CREATE ORDER" />
+                        <materialDesign:PackIcon Kind="Plus" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <ScrollViewer>
+                <ListView
+                    FontSize="16"
+                    Margin="30, 0"
+                    x:Name="OrdersListView">
+                    <ListView.View>
+                        <GridView
+                        >
+                            <GridViewColumn
+                                Header="Order ID"
+                                DisplayMemberBinding="{Binding OrderId}" />
+                            <GridViewColumn
+                                Header="Ordered By"
+                                DisplayMemberBinding="{Binding Member.Email}" />
+                            <GridViewColumn
+                                Header="Ordered At" DisplayMemberBinding="{Binding OrderDate}" />
+                            <GridViewColumn
+                                Header="Number of Products" DisplayMemberBinding="{Binding OrderDetails.Count}" />
+                            <GridViewColumn
+                                Header="Required Date" DisplayMemberBinding="{Binding RequiredDate}" />
+                            <GridViewColumn
+                                Header="Shipped Date" DisplayMemberBinding="{Binding ShippedDate}" />
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Page>

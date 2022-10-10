@@ -1,0 +1,259 @@
+﻿<Page x:Class="SalesWPFApp.Pages.MembersPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Title="MemberPage">
+    <Page.Resources>
+        <Style
+            x:Key="FormInput"
+            TargetType="TextBox"
+            BasedOn="{StaticResource MaterialDesignTextBox}">
+            <Setter Property="Control.Width" Value="300" />
+            <Setter Property="Control.FontSize" Value="15" />
+            <Setter Property="Control.FontWeight" Value="DemiBold" />
+            <Setter Property="Control.Padding" Value="8, 10" />
+        </Style>
+
+        <Style
+            x:Key="PasswordInput"
+            TargetType="PasswordBox"
+            BasedOn="{StaticResource MaterialDesignPasswordBox}">
+            <Setter Property="Control.Width" Value="300" />
+            <Setter Property="Control.FontSize" Value="15" />
+            <Setter Property="Control.FontWeight" Value="DemiBold" />
+            <Setter Property="Control.Padding" Value="8, 10" />
+        </Style>
+        <Style
+            x:Key="ActionButton"
+            TargetType="Button"
+            BasedOn="{StaticResource MaterialDesignRaisedButton}">
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="Auto" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontWeight" Value="DemiBold" />
+            <Setter Property="Padding" Value="0, 10" />
+            <Setter Property="Margin" Value="10, 0" />
+        </Style>
+        <Style
+            x:Key="ComboBoxInput"
+            TargetType="ComboBox"
+            BasedOn="{StaticResource MaterialDesignComboBox}">
+            <Setter Property="Width" Value="300" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontWeight" Value="DemiBold" />
+            <Setter Property="Padding" Value="8, 10" />
+        </Style>
+        <Style x:Key="FormGroup">
+            <Setter Property="Control.HorizontalAlignment" Value="Center" />
+            <Setter Property="Control.Margin" Value="0,0,0,14" />
+        </Style>
+        <Style x:Key="FormLabel">
+            <Setter Property="Control.FontWeight" Value="Medium" />
+            <Setter Property="Control.FontSize" Value="15" />
+        </Style>
+    </Page.Resources>
+    <Grid
+        Background="#f9fafb"
+        Margin="0, 10, 0, 10">
+        <ScrollViewer>
+            <StackPanel>
+                <WrapPanel
+                    HorizontalAlignment="Center"
+                    Margin="30, 20">
+                    <StackPanel
+                        Margin="10, 0">
+                        <StackPanel
+                            Style="{StaticResource FormGroup}">
+                            <Label
+                                Style="{StaticResource FormLabel}">
+                                Member ID
+                            </Label>
+                            <TextBox
+                                Style="{StaticResource FormInput}"
+                                materialDesign:HintAssist.Hint="Member ID"
+                                IsEnabled="False"
+                                Text="{Binding Path=MemberId, Mode=OneWay}"
+                                DataContext="{Binding ElementName=MembersListView, Path=SelectedItem}" />
+                        </StackPanel>
+                        <StackPanel
+                            Style="{StaticResource FormGroup}">
+                            <Label
+                                Style="{StaticResource FormLabel}">
+                                Email
+                            </Label>
+                            <TextBox
+                                x:Name="EmailTextBox"
+                                Style="{StaticResource FormInput}"
+                                materialDesign:HintAssist.Hint="Email"
+                                Text="{Binding Path=Email, Mode=OneWay}"
+                                DataContext="{Binding ElementName=MembersListView, Path=SelectedItem}" />
+                        </StackPanel>
+                        <StackPanel
+                            Style="{StaticResource FormGroup}">
+                            <Label
+                                Style="{StaticResource FormLabel}">
+                                Company Name
+                            </Label>
+                            <TextBox
+                                x:Name="CompanyNameTextBox"
+                                Style="{StaticResource FormInput}"
+                                materialDesign:HintAssist.Hint="Company Name"
+                                Text="{Binding Path=CompanyName, Mode=OneWay}"
+                                DataContext="{Binding ElementName=MembersListView, Path=SelectedItem}" />
+                        </StackPanel>
+
+
+                    </StackPanel>
+                    <StackPanel
+                        Margin="10, 0">
+                        <StackPanel
+                            Style="{StaticResource FormGroup}">
+                            <Label
+                                Style="{StaticResource FormLabel}">
+                                City
+                            </Label>
+                            <TextBox
+                                x:Name="CityTextBox"
+                                Style="{StaticResource FormInput}"
+                                materialDesign:HintAssist.Hint="City"
+                                Text="{Binding Path=City, Mode=OneWay}"
+                                DataContext="{Binding ElementName=MembersListView, Path=SelectedItem}" />
+                        </StackPanel>
+                        <StackPanel
+                            Style="{StaticResource FormGroup}">
+                            <Label
+                                Style="{StaticResource FormLabel}">
+                                Country
+                            </Label>
+                            <TextBox
+                                x:Name="CountryTextBox"
+                                Style="{StaticResource FormInput}"
+                                materialDesign:HintAssist.Hint="Country"
+                                Text="{Binding Path=Country, Mode=OneWay}"
+                                DataContext="{Binding ElementName=MembersListView, Path=SelectedItem}" />
+                        </StackPanel>
+                        <StackPanel
+                            Style="{StaticResource FormGroup}">
+                            <Label
+                                Style="{StaticResource FormLabel}">
+                                Password
+                            </Label>
+                            <PasswordBox
+                                x:Name="PasswordTextBox"
+                                Style="{StaticResource PasswordInput}"
+                                materialDesign:HintAssist.Hint="Password"
+                                DataContext="{Binding ElementName=MembersListView, Path=SelectedItem}" />
+                        </StackPanel>
+
+                    </StackPanel>
+                </WrapPanel>
+                <StackPanel
+                    Margin="0, 0, 0, 10"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Button
+                        Click="InsertButton_OnClick"
+                        x:Name="InsertButton"
+                        Background="#09c372"
+                        Style="{StaticResource ActionButton}">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0, 0, 10, 0"
+                                VerticalAlignment="Center"
+                                Text="Insert" />
+                            <materialDesign:PackIcon Kind="Plus"
+                                                     VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                    <Button
+                        x:Name="UpdateButton"
+                        Click="UpdateButton_OnClick"
+                        Background="#f59e0b"
+                        Style="{StaticResource ActionButton}">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0, 0, 10, 0"
+                                VerticalAlignment="Center"
+                                Text="Update" />
+                            <materialDesign:PackIcon Kind="Sync"
+                                                     VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                    <Button
+                        x:Name="DeleteButton"
+                        Click="DeleteButton_OnClick"
+                        Background="#dc2626"
+                        Style="{StaticResource ActionButton}">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0, 0, 10, 0"
+                                VerticalAlignment="Center"
+                                Text="Delete" />
+                            <materialDesign:PackIcon Kind="Delete"
+                                                     VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                    <Button
+                        Click="RestoreButton_OnClick"
+                        x:Name="RestoreButton"
+                        Background="DodgerBlue"
+                        Style="{StaticResource ActionButton}">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0, 0, 10, 0"
+                                VerticalAlignment="Center"
+                                Text="Restore" />
+                            <materialDesign:PackIcon Kind="History"
+                                                     VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <ListView
+                    SelectionChanged="MembersListView_OnSelectionChanged"
+                    Style="{StaticResource MaterialDesignListView}"
+                    FontSize="16"
+                    Margin="30, 0"
+                    x:Name="MembersListView">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn
+                                Header="Member ID" DisplayMemberBinding="{Binding MemberId}" />
+                            <GridViewColumn
+                                Header="Email" DisplayMemberBinding="{Binding Email}" />
+                            <GridViewColumn Header="Company" DisplayMemberBinding="{Binding CompanyName}" />
+                            <GridViewColumn
+                                Header="City"
+                                DisplayMemberBinding="{Binding City}" />
+                            <GridViewColumn Header="Country" DisplayMemberBinding="{Binding Country}" />
+                            <!-- <GridViewColumn  -->
+                            <!--     x:Name="PasswordColumn" -->
+                            <!--     Header="Password" -->
+                            <!--                 DisplayMemberBinding="{Binding Password}" /> -->
+
+
+                            <GridViewColumn
+                                Header="Status"
+                                DisplayMemberBinding="{Binding Status}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
